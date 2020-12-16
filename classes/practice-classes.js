@@ -14,6 +14,18 @@
   Be sure to match the capitalization and punctuation of the string.
 */
 
+class Character {
+  constructor (name, type) {
+    this.name = name;
+    this.type = type;
+  }
+
+  getInfo(){
+    return `This is a ${this.type} character named ${this.name}.`
+  }
+}
+
+
 //CODE HERE
 
 //////////////////PROBLEM 2////////////////////
@@ -32,12 +44,26 @@
   Call your new class NPC
 */
 
+class NPC extends Character{
+  constructor(name, type, location, phrase){
+    super(name, type)
+    this.location = location;
+    this.phrase = phrase;
+  }
+
+  dialogue(){
+    return `${this.name}: ${this.phrase}`
+  }
+}
+
 //CODE HERE
 
 /*
     Create an NPC named Ralph who is a human located in Niceland. His phrase should be `I'm gonna wreck it!`. 
     Store your new NPC in a variable called 'ralph'.
 */
+
+const ralph = new NPC("Ralph", "human", "Niceland", "I'm gonna wreck it!" )
 
 //CODE HERE
 
@@ -48,7 +74,8 @@
     Third, make a variable named ralphsLocation whose value will be Ralph's location.
 */
 
-//CODE HERE
+
+  //CODE HERE
 
 //////////////////PROBLEM 3////////////////////
 
@@ -73,7 +100,17 @@
   Call your new class Player
 */
 
-//CODE HERE
+class Player extends Character{
+  constructor (name, type, healthLevel, attackLevel){
+    super(name, type)
+    this.healthLevel = healthLevel;
+    this.attackLevel = attackLevel;
+  }
+
+  defend(){
+
+  }
+}//CODE HERE
 
 /*
     Next, we'll create two Players.
@@ -83,6 +120,9 @@
     and he's a firebender type with a 100 healthLevel and 0 attackLevel.
 */
 
+const aang = new Player("AAng", "airbender", 100, 100)
+
+const ozai = new Player("Ozai", "firebender", 100, 0)
 //CODE HERE
 
 /*
@@ -110,7 +150,20 @@
       - Example string: `Wonder Woman used flight!`
 */
 
-//CODE HERE
+class Hero extends Player{
+  constructor(name, type, healthLevel, attackLevel, superPowers){
+    super(name, type, healthLevel, attackLevel)
+    this.superPowers = []
+  }
+
+  addSuperPower(){
+    return `${this.superPowers}`
+  }
+
+  useSuperPower(){
+    return `${this.name} used ${this.superPowers}`
+  }
+}//CODE HERE
 
 /*
   Create a hero named 'Fire Spitter' whose type is 'dragon'. 
@@ -121,4 +174,4 @@
   Last, invoke useSuperPower passing in 0 for the index and store the result in a variable called fireSpitterAttack.
 */
 
-//CODE HERE
+const fireSpitter = new Hero("Fire Spitter", "dragon", 5000, 5000) //CODE HERE

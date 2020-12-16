@@ -8,12 +8,19 @@
     myFunc should return getSecretString
   */
   
+ function myFunc(){
+  const myStr = `super secret string`
+  return function getSecretString(){
+    return myStr
+  }
+}
+
   //CODE HERE
 
   
   //Now create a variable called secretString. Its value should be the invocation of myFunc.
 
-  //CODE HERE
+  var secretString = myFunc() //CODE HERE
   
   
   ////////////PROBLEM 2////////////
@@ -28,12 +35,17 @@
     The lightSwitch function should return flipTheSwitch.
   */
   
-  //CODE HERE
+  function lightSwitch(){
+    const isTheLightOn = false;
+    return function flipTheSwitch(){
+      return "The light is off"
+    } 
+  }//CODE HERE
 
   
   //Create a variable called kitchenSwitch whose value is the invocation of lightSwitch.
   
-  //CODE HERE
+  var kitchenSwitch = lightSwitch()//CODE HERE
 
   
   //Invoke kitchenSwitch.
@@ -43,12 +55,12 @@
   
   //Create a variable called bathroomSwitch whose value is the invocation of lightSwitch. 
 
-  //CODE HERE
+  var bathroomSwitch = lightSwitch()//CODE HERE
   
   
   //Invoke bathroomSwitch twice.
   
-  //CODE HERE
+  bathroomSwitch() //CODE HERE
 
   
   
@@ -63,7 +75,22 @@
       - 'prunePlant' should subtract 1 from the height and return the new height
   */
 
-  //CODE HERE
+ function plantTracker(){
+  var plant = "fern";
+  var height = 12;
+  return {
+    readInfo: function(){
+      return `This is a ${plant} plant that is ${height} inches tall`
+    },
+    waterPlant: function(){
+      
+      
+    },
+    prunePlant: function(){
+      
+    }
+  }
+}//CODE HERE
 
 
   ////////////PROBLEM 4////////////
@@ -78,14 +105,17 @@
         - hint: try to find the index of the string first
   */
 
-  //CODE HERE
+  function inventory(){
+    var products = [];
+  } 
+   //CODE HERE
 
 
   /*
     Create a variable called 'shoes' whose value is the invocation of inventory.
   */
 
-  //CODE HERE
+  var shoes = inventory() //CODE HERE
 
 
   /*
